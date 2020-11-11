@@ -4,7 +4,7 @@ public class Student extends Person implements Learner {
     public double totalStudyTime;
 
     public Student() {
-        super();
+        super(id);
     }
 
     public void learn (double numberOfHours){

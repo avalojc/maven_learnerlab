@@ -14,10 +14,11 @@ public class TestPerson {
     String expectedName = "John";
 
     //when
-    Person person = new Person((expectedId, expectedName))
+    Person person = new Person( expectedId, expectedName );
 
-    //then
-//    Assert.assertEquals(Person.getId,expectedName);
-//
-//    }
+    // then
+    Assert.assertEquals( expectedName, person.getName() );
+    Assert.assertEquals( expectedId, person.getId() );
+
+    }
 }
