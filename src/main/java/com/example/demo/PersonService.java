@@ -33,9 +33,7 @@ public class PersonService implements PersonServiceInterface {
     @Override
     public Person updateById(Long id, Person personData){
         Person personInDatabase = read(id);
-        personInDatabase.setId(personData.getId());
         personInDatabase.setName(personData.getName());
-        personInDatabase.setBirthDate(personData.getBirthDate());
         personInDatabase = repository.save(personInDatabase);
         return personInDatabase;
     }

@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestInstructor {
 
     @Test
-    public void testImplimentaton{
+    public void testImplimentaton(){
         //given
         Instructor instructor = new Instructor(null, null);
         //when
@@ -16,7 +16,7 @@ public class TestInstructor {
     }
 
     @Test
-    public void testInheritance{
+    public void testInheritance(){
         //given
         Instructor instructor = new Instructor(null, null);
         //when
@@ -48,18 +48,26 @@ public class TestInstructor {
         Learner student2 = new Student(null,null);
         Learner student3 = new Student(null,null);
         Learner[] students = {student1,student2, student3};
-        double numberOfHoursToTeach = students.length;
+        double numberOfHoursToTeach = 99;
+
         double preStudyTime1 = student1.getTotalStudyTime();
         double preStudyTime2 = student2.getTotalStudyTime();
         double preStudyTime3 = student3.getTotalStudyTime();
-        double expected1 = preStudyTime+ numberOfHoursToTeach;
-        double expected2 = preStudyTime+ numberOfHoursToTeach;
-        double expected3 = preStudyTime+ numberOfHoursToTeach;
+
+        double expected1 = preStudyTime1+ (numberOfHoursToTeach/students.length);
+        double expected2 = preStudyTime2+ (numberOfHoursToTeach/students.length);
+        double expected3 = preStudyTime3+ (numberOfHoursToTeach/students.length);
+
         //when
-        instructor.teach(student, numberOfHoursToTeach);
-        double actual = student.getTotalStudyTime();
+        instructor.lecture(numberOfHoursToTeach, students);
+        double actual1 = student1.getTotalStudyTime();
+        double actual2 = student1.getTotalStudyTime();
+        double actual3 = student1.getTotalStudyTime();
+
         //then
-        Assert.assertEquals(expected,actual,0.01);
+        Assert.assertEquals(expected1,actual1,0.01);
+        Assert.assertEquals(expected2,actual2,0.01);
+        Assert.assertEquals(expected3,actual3,0.01);
     }
 
 }

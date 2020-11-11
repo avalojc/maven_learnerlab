@@ -14,8 +14,8 @@ public class PersonConfiguration {
 
     @PostConstruct
     public void setup(){
-        Person person1 = new Person(null,"JC", new Date());
-        Person person2 = new Person(null,"Avalo", new Date());
+        Person person1 = new Person(null,"JC");
+        Person person2 = new Person(null,"Avalo");
         service.create(person1);
         service.create(person2);
     }
