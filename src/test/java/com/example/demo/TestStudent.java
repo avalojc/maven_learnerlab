@@ -16,11 +16,15 @@ public class TestStudent {
     @Test
     public void testLearn() {
         //given
-        
+        Student student = new Student(null, null);
+        Double numberOfHoursToLearn = 10.0;
+        Double preStudyTime = student.getTotalStudyTime();
+        Double postStudyTime = preStudyTime + numberOfHoursToLearn;
+
         //when
+        student.learn(numberOfHoursToLearn);
 
         //then
-
-
+        Assert.assertEquals(postStudyTime, student.getTotalStudyTime());
     }
 }
