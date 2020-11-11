@@ -9,7 +9,11 @@ public class People {
         personList.add(person);
     }
 //      TODO: Find by Id.
-//    public Person findById (long id){
-//        personList.forEach( (n) -> findById(id));
-//    }
+    public Person findById (long id){
+        personList
+                .stream()
+                .filter(person -> person.getId() ==id)
+                .findFirst()
+                .get();
+    }
 }

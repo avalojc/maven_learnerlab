@@ -7,8 +7,8 @@ import java.util.List;
 public class Instructor extends Person implements Teacher {
 
 
-    public Instructor() {
-        super(id);
+    public Instructor(Long id, String name) {
+        super(id, name);
     }
 
     @Override
