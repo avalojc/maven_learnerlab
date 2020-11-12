@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestInstructor {
 
     @Test
-    public void testImplimentaton(){
+    public void testImplementation(){
         //given
         Instructor instructor = new Instructor(null, null);
         //when
