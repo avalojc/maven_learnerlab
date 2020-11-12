@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class Instructors extends People {
+public class Instructors extends People<Instructor> {
     private static Instructors INSTANCE ;
 
     private Instructors(){
@@ -15,5 +15,12 @@ public class Instructors extends People {
             INSTANCE = new Instructors();
         }
         return INSTANCE;
+    }
+
+    @Override
+    public Instructor[] toArray() {
+        Instructor[] arrayToBePopulated = new Instructor[0];
+        Instructor[] populatedArray = personList.toArray(arrayToBePopulated);
+        return populatedArray;
     }
 }

@@ -9,14 +9,16 @@ import java.util.List;
 public class TestInstructors {
     @Test
     public void test(){
-        //given
-        String[] nameArray = "Fred, Jothi, David, Leon".split(",");
+        // given
+        String[] nameArray = "Fred,Jothi,David,Leon".split(",");
         List<String> nameList = Arrays.asList(nameArray);
 
-        //when
-        for (Person person: Instructors.getInstance()){
+        // when
+
+        Instructors instructorsSingleton = Instructors.getInstance();
+        for(Person person : instructorsSingleton) {
             String personName = person.getName();
-            //then
+            // then
             Assert.assertTrue(nameList.contains(personName));
         }
     }

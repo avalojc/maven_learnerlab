@@ -10,11 +10,11 @@ public class TestStudents {
     @Test
     public void test(){
         //given
-        String[] nameArray = "JC, Trevor, Neely, Brandt,Brian".split(",");
+        String[] nameArray = "JC,Trevor,Neely,Brandt,Brian".split(",");
         List<String> nameList = Arrays.asList(nameArray);
 
         //when
-        for (Person person: Students.getInstance()){
+        for (Student person: Students.getInstance()){
             String personName = person.getName();
             //then
             Assert.assertTrue(nameList.contains(personName));
