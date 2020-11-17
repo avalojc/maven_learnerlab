@@ -21,11 +21,12 @@ public class TestEducator {
         //Given
         Educator educator = Educator.LEON;
         Student student = new Student(null, null);
+        double expected = 2.0;
         //When
-        educator.teach(2,student);
+        educator.teach(expected,student);
         //Then
         double actual = educator.getTimeWorked();
-        Assert.assertEquals(2,actual, 0.01);
+        Assert.assertEquals(expected,actual, 0.01);
 
     }
 
@@ -34,9 +35,13 @@ public class TestEducator {
         //Given
         Educator educator = Educator.FRED;
         Students students = Students.getInstance();
-
+        Learner[] learners = students.toArray();
+        double expected = 600.0;
         //When
+        educator.lecture(expected,learners);
         //Then
+        double actual = educator.getTimeWorked();
+        Assert.assertEquals(expected, actual, 0.01);
 
     }
 }
